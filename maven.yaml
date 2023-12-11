@@ -1,1 +1,10 @@
-h
+---
+- hosts: Node2
+  user: ansible
+  become: yes
+  tasks:
+    - name: update and maven java
+      ansible.builtin.apt:
+        name: maven
+        update_cache: yes
+        state: present
